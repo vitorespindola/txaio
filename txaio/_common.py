@@ -101,7 +101,7 @@ class _BatchedTimer(IBatchedTimer):
                 if len(errors):
                     msg = u"Error(s) processing call_later bucket:\n"
                     for e in errors:
-                        msg += u"{}\n".format(e)
+                        msg += u"{0}\n".format(e)
                     raise RuntimeError(msg)
         # ceil()ing because we want the number of chunks, and a
         # partial chunk is still a chunk

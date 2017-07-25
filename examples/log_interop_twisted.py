@@ -48,7 +48,7 @@ class Observer(object):
     def __init__(self):
         self._out = sys.stdout
     def __call__(self, event):
-        self._out.write("Observe: {}\n".format(event))
+        self._out.write("Observe: {0}\n".format(event))
 
 lib = Library()
 print("logging not started")

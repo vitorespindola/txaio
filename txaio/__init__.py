@@ -105,7 +105,7 @@ _explicit_framework = None
 def use_twisted():
     global _explicit_framework
     if _explicit_framework is not None and _explicit_framework != 'twisted':
-        raise RuntimeError("Explicitly using '{}' already".format(_explicit_framework))
+        raise RuntimeError("Explicitly using '{0}' already".format(_explicit_framework))
     _explicit_framework = 'twisted'
     from txaio import tx
     _use_framework(tx)
@@ -117,7 +117,7 @@ def use_twisted():
 def use_asyncio():
     global _explicit_framework
     if _explicit_framework is not None and _explicit_framework != 'asyncio':
-        raise RuntimeError("Explicitly using '{}' already".format(_explicit_framework))
+        raise RuntimeError("Explicitly using '{0}' already".format(_explicit_framework))
     _explicit_framework = 'asyncio'
     from txaio import aio
     _use_framework(aio)
