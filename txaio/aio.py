@@ -29,7 +29,6 @@ from __future__ import absolute_import, print_function
 import os
 import sys
 import time
-import weakref
 import functools
 import traceback
 import logging
@@ -104,7 +103,7 @@ def with_config(loop=None):
 
 # logging should probably all be folded into _AsyncioApi as well
 _stderr, _stdout = sys.stderr, sys.stdout
-_loggers = weakref.WeakSet()  # weak-ref's of each logger we've created before start_logging()
+_loggers = set() # ref's of each logger we've created before start_logging()
 _log_level = 'info'  # re-set by start_logging
 _started_logging = False
 _categories = {}

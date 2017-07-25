@@ -28,7 +28,6 @@ from __future__ import absolute_import, division, print_function
 
 import os
 import sys
-import weakref
 import inspect
 
 from functools import partial
@@ -60,7 +59,7 @@ _stderr, _stdout = sys.stderr, sys.stdout
 # then we call _set_log_level on each instance. After that,
 # Logger's ctor uses _log_level directly.
 _observer = None     # for Twisted legacy logging support; see below
-_loggers = weakref.WeakSet()  # weak-references of each logger we've created
+_loggers = set() # ref's of each logger we've created before start_logging()
 _log_level = 'info'  # global log level; possibly changed in start_logging()
 _started_logging = False
 
